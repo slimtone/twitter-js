@@ -6,6 +6,7 @@ const routes = require("./routes");
 const fs = require("fs");
 const path = require("path");
 const mimeLookup = require("mime-lookup");
+const bodyParser = require("body-parser");
 
 
 
@@ -35,6 +36,11 @@ app.use(morgan("dev"));
 
 // the typical way to use express static middleware
 app.use(express.static(__dirname + "/public"));
+
+app.use(bodyParser.urlencoded({extended: true})); // for HTML form submits
+app.use(bodyParser.json()); // would be for AJAX requests
+
+
 
 // function staticMiddleware(req, res, next){
 // 	finds the associated file in our WebKitFileSystem

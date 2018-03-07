@@ -12,6 +12,7 @@ body {
   margin: 0 auto -60px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
+  background-color: rgb(red, green, blue);
 }
 
 /* Set the fixed height of the footer here */
